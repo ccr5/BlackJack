@@ -9,7 +9,7 @@ A BlackJack game to have a fun!
 # 1- What is BlackJack game?
 BlackJack is card game where who has a sum of cards equals 21 win.
 
-A - 1 or 11		2 - 2 	3 - 3		4 - 4		5 - 5		6 - 6		7 - 7		8 - 8		9 - 9		10 - 10		J - 10		Q - 10		K - 10
+A - 1 or 11, 2 - 2, 3 - 3, 4 - 4, 5 - 5, 6 - 6, 7 - 7, 8 - 8, 9 - 9, 10 - 10, J - 10, Q - 10 and K - 10
 
 In this game, you can bet to get more fun!!!
 
