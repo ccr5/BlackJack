@@ -1,8 +1,3 @@
-import random as r
-from deck import Deck
-from cards import Cards
-
-
 class Dealer:
     """
     Main methods and functions to play BlackJack
