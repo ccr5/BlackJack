@@ -19,7 +19,8 @@ class TestBlackJack(unittest.TestCase):
     def card_show_card(self):
         npc = cards.Cards()
         result = npc.show_card(["Aces", [1, 11], "A"])
-        self.assertEqual(result, ["- - - -", "|     |", f"|  A  |", "|     |", "- - - -"])
+        self.assertEqual(
+            result, ["- - - -", "|     |", f"|  A  |", "|     |", "- - - -"])
 
     # Dealer unittests
     def dealer_check_balance(self):

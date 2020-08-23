@@ -1,7 +1,7 @@
 class Cards:
     """
-	Function and methods about cards
-	"""
+    Function and methods about cards
+    """
 
     matrix = [["Aces", [1, 11], "A"],
               ["Two", 2, "2"],
@@ -20,16 +20,18 @@ class Cards:
     @staticmethod
     def show_card(card):
         """
-		to print a card representation
-		:return a card representation
-		"""
+        :return a card representation
+        """
+
         result = []
 
         for x in card:
 
             if x[0] == "Ten":
-                result.append(["- - - -", "|     |", f"| {x[2]}  |", "|     |", "- - - -"])
+                result.append(
+                    ["- - - -", "|     |", f"| {x[2]}  |", "|     |", "- - - -"])
             else:
-                result.append(["- - - -", "|     |", f"|  {x[2]}  |", "|     |", "- - - -"])
+                result.append(
+                    ["- - - -", "|     |", f"|  {x[2]}  |", "|     |", "- - - -"])
 
         return result

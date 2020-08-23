@@ -12,9 +12,9 @@ class Players:
 
     def show_info(self):
         """
-        show all information about the player
         :return: how many balance, wins and defeats he has
         """
+
         if self.balance > 0:
             print(f"{self.name}, your balance is: {self.balance}")
         elif self.balance == 0:

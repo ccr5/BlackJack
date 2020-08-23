@@ -1,43 +1,25 @@
-class Bot:
+from classes.players import Players
+
+
+class Bot(Players):
     """
     Functions and methods to players that will play the game
     """
 
-    def __init__(self, name, balance):
-        self.name = name
-        self.balance = balance
-        self.hand = []
-        self.wins = 0
-        self.defeats = 0
-
     def welcome_message(self):
         """
-        Show a welcome message when the player choose a name for him
         :return: a welcome message
         """
         print(f"Hi o/ \nMy name is {self.name} and I'll play with you")
         print("Good luck!")
         print("Aaah, I have the same balance for a fair play :)")
 
-    def show_info(self):
-        """
-        Show all information about the player
-        :return: how many balance, wins and defeats he has
-        """
-        if self.balance > 0:
-            print(f"{self.name}, your balance is: {self.balance}")
-        elif self.balance == 0:
-            print(f"{self.name}, you haven't balance, thanks for play BlackJack")
-        else:
-            print(f"{self.name}, you're owe {self.balance}")
-
-        print(f"you won {self.wins} and have {self.defeats} defeats")
-
     def play_game(self):
         """
-        This Function will see if he needs one more card or not
-        :return: True if he needs one more card and False to not
+        :return boolean:    True if he needs more cards 
+                            False if he don't need more cards
         """
+
         sum_hand = 0
         count_a = 0
 
