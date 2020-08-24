@@ -1,7 +1,6 @@
-class Players:
-    """
-    Functions and methods to players that will play the game
-    """
+from abc import ABC
+
+class Players(ABC):
 
     def __init__(self, name, balance):
         self.name = name
