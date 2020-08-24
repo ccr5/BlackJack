@@ -1,5 +1,5 @@
 import os
-from classes.players import Players
+from classes.humans import RealPlayer
 from classes.bot import Bot
 from classes.blackjack import BlackJack
 from classes.deck import Deck
@@ -15,14 +15,14 @@ def main():
 
     name = input("First, What is your name? ")
     balance = int(input("How many money have you today? "))
-    player = Players(name, balance)
+    player = RealPlayer(name, balance)
 
     bot = input("Could you choose a name for a bot? ")
     computer = Bot(bot, balance)
     os.system('clear') or None
     computer.welcome_message()
 
-    start = input("\nSo let's play? ")
+    input("\nSo let's play? ")
     os.system('clear') or None
 
     card = Cards()
