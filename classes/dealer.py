@@ -4,14 +4,24 @@ class Dealer:
     """
 
     def check_As(self, count_A, sum):
-        if count_A >= 1 and sum > 10:
-            sum += 1 * count_A
-        elif count_A == 1 and sum <= 10:
-            sum += 11
-        else:
-            pass
+        """
+        :param int count_A: how many As a player object has
+        :param int sum:     how many points a player object already has
+        :return int         sum with As values
+        """
 
-        return sum
+        try:
+            if count_A >= 1 and sum > 10:
+                sum += 1 * count_A
+            elif count_A == 1 and sum <= 10:
+                sum += 11
+            else:
+                pass
+
+            return sum
+
+        except:
+            print("Error: check_As()")
 
     def check_winner(self, hand1, hand2):
         """
@@ -27,36 +37,40 @@ class Dealer:
         count_a_h1 = 0
         count_a_h2 = 0
 
-        for card in hand1:
-            if card[2] == 'A':
-                count_a_h1 += 1
+        try:
+            for card in hand1:
+                if card[2] == 'A':
+                    count_a_h1 += 1
+                else:
+                    h1 += card[1]
+
+            for card in hand2:
+                if card[2] == 'A':
+                    count_a_h2 += 1
+                else:
+                    h2 += card[1]
+
+            h1 = self.check_As(count_a_h1, h1)
+            h2 = self.check_As(count_a_h2, h2)
+
+            if h1 > 21 and h2 > 21:
+                return 'no win', h1, h2
+            elif h1 <= 21 and h2 > 21:
+                return 'h1', h1, h2
+            elif h1 > 21 and h2 <= 21:
+                return 'h2', h1, h2
+            elif h1 == h2:
+                return 'draw', h1, h2
+            elif h1 == 21:
+                return 'h1', h1, h2
+            elif h2 == 21:
+                return 'h2', h1, h2
+            elif h1 > h2:
+                return 'h1', h1, h2
+            elif h2 > h1:
+                return 'h2', h1, h2
             else:
-                h1 += card[1]
+                pass
 
-        for card in hand2:
-            if card[2] == 'A':
-                count_a_h2 += 1
-            else:
-                h2 += card[1]
-
-        h1 = self.check_As(count_a_h1, h1)
-        h2 = self.check_As(count_a_h2, h2)
-
-        if h1 > 21 and h2 > 21:
-            return 'no win', h1, h2
-        elif h1 <= 21 and h2 > 21:
-            return 'h1', h1, h2
-        elif h1 > 21 and h2 <= 21:
-            return 'h2', h1, h2
-        elif h1 == h2:
-            return 'draw', h1, h2
-        elif h1 == 21:
-            return 'h1', h1, h2
-        elif h2 == 21:
-            return 'h2', h1, h2
-        elif h1 > h2:
-            return 'h1', h1, h2
-        elif h2 > h1:
-            return 'h2', h1, h2
-        else:
-            pass
+        except:
+            print("Error: check_winner()")

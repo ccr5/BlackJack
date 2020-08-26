@@ -23,22 +23,23 @@ class Bot(Players):
         sum_hand = 0
         count_a = 0
 
-        if len(self.hand) == 0:
-            return True
-        else:
-            for card in self.hand:
-                if card[2] == 'A':
-                    count_a += 1
-                    if count_a >= 1 and sum_hand > 10:
-                        sum_hand += 1 * count_a
-                    elif count_a == 1 and sum_hand <= 10:
-                        sum_hand += 11
-                    else:
-                        pass
-                else:
-                    sum_hand += card[1]
-
-            if sum_hand < 21:
+        try:
+            if len(self.hand) == 0:
                 return True
             else:
-                return False
+                for card in self.hand:
+                    if card[2] == 'A':
+                        count_a += 1
+                        if count_a >= 1 and sum_hand > 10:
+                            sum_hand += 1 * count_a
+                        elif count_a == 1 and sum_hand <= 10:
+                            sum_hand += 11
+                        else:
+                            pass
+                    else:
+                        sum_hand += card[1]
+
+            return True if sum_hand < 21 else False
+
+        except:
+            print("Error: play_game()")

@@ -24,6 +24,7 @@ def main():
 
     input("\nSo let's play? ")
     os.system('clear') or None
+    del balance, bot, name
 
     card = Cards()
     dealer = Dealer()
@@ -34,33 +35,34 @@ def main():
 
     while not game:
 
+        global hand_repr_player
+        global hand_repr_bot
+
         player.hand = []
         computer.hand = []
+
         game_deck = deck.shuffle_deck(deck.create_deck(card))
         os.system('clear') or None
 
         bj.check_balance(game, player)
-        if game == True:
-            break
-
         bj.check_balance(game, computer)
+
         if game == True:
             break
 
         os.system('clear') or None
-        ask_player = False
 
         bets = bj.bet(player, computer)
+
+        ask_player = False
 
         while not ask_player:
 
             if len(player.hand) == 0:
                 print("You don't have any card in your hand")
             else:
-                hand = card.show_card(player.hand)
-                for c in hand:
-                    for x in c:
-                        print(x)
+                hand_repr_player = card.show_card(player.hand)
+                [[print(x) for x in c] for c in hand_repr_player]
 
             i = input('Would you like one more card? ')
             i = i.upper()
@@ -82,14 +84,12 @@ def main():
             else:
                 bot_player = True
 
-        result = dealer.check_winner(
-            player.hand, computer.hand)
+        result = dealer.check_winner(player.hand, computer.hand)
 
         bj.check_result(player, computer, bets, result)
 
         player.show_info()
-        hand = card.show_card(player.hand)
-        for c in hand:
+        for c in hand_repr_player:
             for x in c:
                 print(x)
 
@@ -97,8 +97,8 @@ def main():
 
         computer.show_info()
 
-        hand = card.show_card(computer.hand)
-        for c in hand:
+        hand_repr_bot = card.show_card(computer.hand)
+        for c in hand_repr_bot:
             for x in c:
                 print(x)
 

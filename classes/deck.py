@@ -14,13 +14,18 @@ class Deck:
 
         deck = []
 
-        for x in cards.matrix:
-            deck.append(x)
-            deck.append(x)
-            deck.append(x)
-            deck.append(x)
+        try:
 
-        return deck
+            for x in cards.matrix:
+                deck.append(x)
+                deck.append(x)
+                deck.append(x)
+                deck.append(x)
+
+            return deck
+
+        except:
+            print("Error: create_deck()")
 
     def shuffle_deck(self, deck):
         """
@@ -28,11 +33,15 @@ class Deck:
         :return list new_deck: A shuffled deck
         """
 
-        sequency_card = list(range(0, 52))
-        r.shuffle(sequency_card)
-        new_deck = []
+        try:
+            sequency_card = list(range(0, 52))
+            r.shuffle(sequency_card)
+            new_deck = []
 
-        for x in sequency_card:
-            new_deck.append(deck[x])
+            for x in sequency_card:
+                new_deck.append(deck[x])
 
-        return new_deck
+            return new_deck
+
+        except:
+            print("Error: shuffle_deck()")
