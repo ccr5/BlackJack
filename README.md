@@ -10,10 +10,6 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/ccr5/BlackJack">
-    <img src="images/logo.png" alt="Logo" width="100%">
-  </a>
-
   <h3 align="center">BlackJack Game</h3>
 
   <p align="center">
@@ -59,7 +55,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/ccr5/BlackJack)
 
 This is just a little project to have a fun. I used it to learn Python and now, always when I have time, I'm improving it with new features or something else.
 
@@ -107,7 +103,7 @@ To get a local copy up and running follow these simple example steps.
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/ccr5/BlackJack/issues) for a list of proposed features (and known issues).
 
 
 
